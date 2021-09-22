@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{
+    margin:0;
+    padding:0;
+  }
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 60px;
+  right: 100px;
+}
+.top1-right {
+  position: absolute;
+  top: 60px;
+  right: 350px;
+}
+.top2-right {
+  position: absolute;
+  top: 10px;
+  right: 245px;
+
+}
+
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.centered1 {
+  position: absolute;
+  top: 5.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centered2 {
+  position: absolute;
+  top: 60%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  border: none;
+  background-color:white
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {border-radius: 62px;}
+.icon-bar {
+  width: 100%; /* Full-width */
+  background-color: #555; /* Dark-grey background */
+  overflow: auto; /* Overflow due to float */
+}
+
+.icon-bar a {
+  float: left; /* Float links side by side */
+  text-align: center; /* Center-align text */
+  width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
+  padding: 12px 0; /* Some top and bottom padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: white; /* White text color */
+  font-size: 36px; /* Increased font size */
+}
+
+.icon-bar a:hover {
+  background-color: #000; /* Add a hover color */
+}
+
+.active {
+  background-color: #04AA6D; /* Add an active/current color */
+}
+img {
+  opacity: 0.5;
+}
+
+img:hover {
+  opacity: 1.0;
+}
+</style>
+</head>
+<body>
+  <style media="screen">
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <div class="icon-bar">
+    <a class="active" href="#"><i class="fa fa-home"></i></a>
+  <!--<a href="#"><i class="fa fa-search"></i></a>
+    <a href="#"><i class="fa fa-envelope"></i></a>
+    <a href="#"><i class="fa fa-globe"></i></a>
+    <a href="#"><i class="fa fa-trash"></i></a>-->
+  </div>
+  <style>
+  body {
+    background-image: url('https://media-exp1.licdn.com/dms/image/C511BAQE4hH2p_6ZYiA/company-background_10000/0/1519799407243?e=2159024400&v=beta&t=MsUPis3WqhRRooeLWvEjNbJr4WqdZtfq9uJhgRrbKac');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+
+  }
+
+  </style>
+  <div class="centered">
+    <a href="admin.html"><p style="font-size:30px"><button class="button button1"><b>ADMIN</b></button></p></a></div>
+  <div class="centered2">
+    <a href="nonadmin.html"><p style="font-size:30px"><button class="button button1"><b>NON ADMIN</b></button></p></a></div>
+  </div>
+  <div class="centered1"  style="font-size:30px">
+    <p style="color:white"><b>WELCOME</b></p>
+  </div>
+
+</div>
+</body>
+</html>
