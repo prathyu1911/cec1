@@ -1,0 +1,19 @@
+{
+  "name": "cec1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prathyu1911/cec1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prathyu1911/cec1/issues"
+  },
+  "homepage": "https://github.com/prathyu1911/cec1#readme"
+}

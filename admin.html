@@ -2,108 +2,159 @@
 <html lang="en" dir="ltr">
   <head>
     <title>WELCOME</title>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB0Du1rXA7ZPpel-uFWrJpkcllVo_hry7c",
+        authDomain: "cec1-3f282.firebaseapp.com",
+        projectId: "cec1-3f282",
+        storageBucket: "cec1-3f282.appspot.com",
+        messagingSenderId: "75025864324",
+        appId: "1:75025864324:web:1950160de3917d6b8b14d1",
+        measurementId: "G-9F7NWP3ZLQ",
+      };
+
+      // Initialize Firebase
+
+      const app = initializeApp(firebaseConfig);
+      const firestore = getFirestore(app);
+
+      console.log("Firestore connected");
+
+      async function onSubmit() {
+        const data = new FormData(document.getElementById("login"));
+        const username = data.get("uname");
+        const password = data.get("psw");
+        const admin = collection(firestore, "admin");
+        const snapshot = await getDocs(admin);
+        const usernames = snapshot.docs.map((doc) => doc.data());
+        console.log("Get form data");
+        if (usernames[username] === password) {
+          console.log("Successfully authenticated");
+        } else {
+          console.log("Password is incorrect");
+        }
+      }
+    </script>
   </head>
   <body>
     <style media="screen">
-    form {
-border: 3px solid #f1f1f1;
-}
+      form {
+        border: 3px solid #f1f1f1;
+      }
 
-/* Full-width inputs */
-input[type=text], input[type=password] {
-width: 100%;
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid #ccc;
-box-sizing: border-box;
-}
+      /* Full-width inputs */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
 
-/* Set a style for all buttons */
-button {
-background-color: #04AA6D;
-color: white;
-padding: 14px 20px;
-margin: 8px 0;
-border: none;
-cursor: pointer;
-width: 100%;
-}
-/* Add a hover effect for buttons */
-button:hover {
-opacity: 0.8;
-}
+      /* Set a style for all buttons */
+      button {
+        background-color: #04aa6d;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+      /* Add a hover effect for buttons */
+      button:hover {
+        opacity: 0.8;
+      }
 
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-width: auto;
-padding: 10px 18px;
-background-color: #f44336;
-}
+      /* Extra style for the cancel button (red) */
+      .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+      }
 
-/* Center the avatar image inside this container */
-.imgcontainer {
-text-align: center;
-margin: 0.4px  0.2px ;
-}
+      /* Center the avatar image inside this container */
+      .imgcontainer {
+        text-align: center;
+        margin: 0.4px 0.2px;
+      }
 
-/* Avatar image */
-img.avatar {
-width: 20%;
-border-radius: 30%;
-}
+      /* Avatar image */
+      img.avatar {
+        width: 20%;
+        border-radius: 30%;
+      }
 
-/* Add padding to containers */
-.container {
-padding: 16px;
-}
-.centered {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-/* The "Forgot password" text */
-span.psw {
-float: right;
-padding-top: 16px;
-}
+      /* Add padding to containers */
+      .container {
+        padding: 16px;
+      }
+      .centered {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      /* The "Forgot password" text */
+      span.psw {
+        float: right;
+        padding-top: 16px;
+      }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-span.psw {
-  display: block;
-  float: none;
-}
-.cancelbtn {
-  width: 100%;
-}
-}
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+        span.psw {
+          display: block;
+          float: none;
+        }
+        .cancelbtn {
+          width: 100%;
+        }
+      }
     </style>
   </body>
-  <body bgcolor="white">
-<form action="action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="https://raw.githubusercontent.com/ThanmayiAkkala/CECB/main/CECB/one.jpg" alt="Avatar" class="avatar">
-  </div>
+  <body background="white">
+    <form method="post" id="login">
+      <div class="imgcontainer">
+        <img
+          src="https://raw.githubusercontent.com/ThanmayiAkkala/CECB/main/CECB/one.jpg"
+          alt="Avatar"
+          class="avatar"
+        />
+      </div>
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required />
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
+        <button type="button" onclick="onSubmit()">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember" /> Remember
+          me
+        </label>
+      </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
+      <div class="container" style="background-color: #f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
   </body>
 </html>
