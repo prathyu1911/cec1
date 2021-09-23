@@ -22,16 +22,30 @@ const firestore = getFirestore(app);
 
 console.log("Firestore connected");
 
-async function onSubmit() {
+export async function onSubmit() {
   const data = new FormData(document.getElementById("login"));
   const username = data.get("uname");
   const password = data.get("psw");
   const admin = collection(firestore, "admin");
   const snapshot = await getDocs(admin);
   const usernames = snapshot.docs.map((doc) => doc.data());
-  if (usernames[username] === password) {
-    console.log("Successfully authenticated");
-  } else {
-    console.log("Password is incorrect");
+  console.log(usernames);
+  let flag = false;
+  usernames.forEach((user) => {
+    if (user["userid"] === username) {
+      if (user["password"] === password) {
+        console.log("Success");
+        flag = true;
+        return;
+      } else {
+        console.log("Password Incorrect");
+        flag = true;
+        return;
+      }
+    }
+  });
+  if (!flag) {
+    console.log("User not found");
   }
 }
+document.getElementById("submitbtn").addEventListener("click", onSubmit);
