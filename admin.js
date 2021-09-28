@@ -35,17 +35,20 @@ export async function onSubmit() {
     if (user["userid"] === username) {
       if (user["password"] === password) {
         console.log("Success");
+        window.location.replace("ad1.html");
         flag = true;
         return;
       } else {
         console.log("Password Incorrect");
         flag = true;
+        alert("Password Incorrect");
         return;
       }
     }
   });
   if (!flag) {
     console.log("User not found");
+    alert("User not found");
   }
 }
 document.getElementById("submitbtn").addEventListener("click", onSubmit);

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style media="screen">
+  body{
+    margin:0;
+    padding:0;
+  }
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 98px;
+  left: 16px;
+}
+.top-left3{
+  left:400px;
+}
+.top-left1 {
+  position: absolute;
+  top: 98px;
+  left: 200px;
+}
+.top-left2 {
+  position: absolute;
+  top: 215px;
+  left: 276px;
+}
+.top-left4{
+  position: absolute;
+  top: 215px;
+  left: 497px;
+}
+.top-left5{
+  position: absolute;
+  top: 355px;
+  left: 116px;
+}
+
+.top-left6{
+  position: absolute;
+  top: 355px;
+  left: 407px;
+}
+
+.top-right {
+  position: absolute;
+  top: 60px;
+  right: 100px;
+}
+.top1-right {
+  position: absolute;
+  top: 100px;
+  right: -8px;
+}
+.top3-right {
+  position: absolute;
+  top: 109px;
+  right: 160px;
+}
+.top4-right {
+  position: absolute;
+  top: 108px;
+  right: 565px;
+}
+.top2-right {
+  position: absolute;
+  top: 10px;
+  right:2px;
+
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centered1 {
+  position: absolute;
+  top: 5.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centered2 {
+  position: absolute;
+  top: 60%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  border: none;
+  background-color:lightgrey;
+  color: black;
+  padding: 30px 42px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: -10px 30px;
+  cursor: pointer;
+}
+.button1 {border-radius: 62px;}
+.icon-bar {
+  width: 100%; /* Full-width */
+  background-color: #555; /* Dark-grey background */
+  overflow: auto; /* Overflow due to float */
+}
+
+.icon-bar a {
+  float: left; /* Float links side by side */
+  text-align: center; /* Center-align text */
+  width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
+  padding: 12px 0; /* Some top and bottom padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: white; /* White text color */
+  font-size: 36px; /* Increased font size */
+}
+
+.icon-bar a:hover {
+  background-color: #000; /* Add a hover color */
+}
+
+.active {
+  background-color: #04AA6D; /* Add an active/current color */
+}
+.banner {
+  background-image:
+  url('bann.JPG');
+  height: 200px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    /* Prevent image from repeating */
+    background-repeat: no-repeat; } </style> </body> <head> <body> <div
+    class="top2-right"> <img src="logo.png" alt="" width="200">
+<div class="top1-right">
+<button class= "button button1" onclick="fees1()">What is the basis of admission?</button>
+<p id="demo"></p>
+</div>
+<script>
+function fees1(){
+  document.getElementById("demo").innerHTML = "Admission will be based solely on MERIT.";
+}
+</script>
+</div>
+<div class="top3-right">
+<button class= "button button1" onclick="fees2()">Is there a separate NRI / FN / OCI quota??</button>
+<p id="demo1"></p>
+</div>
+<script>
+function fees2(){
+  document.getElementById("demo1").innerHTML = "Yes. There is a quota for NRI/ FN/ OCI students.";
+}
+</script>
+</div>
+<div class="top4-right">
+<button class= "button button1" onclick="fees3()">How are M.E. admissions made?</button>
+<p id="demo2"></p>
+</div>
+<script>
+function fees3(){
+  document.getElementById("demo2").innerHTML = "GATE or TANCET scores are considered apart from the entrance test conducted by the Consortium.";
+}
+</script>
+</div>
+   <div class="bottom-right">
+ <form action="/action_page.php">
+  <label for="fname">Enter query:</label>
+  <input type="text" id="fname" name="fname" size="170"><br><br>
+  <input type="image" src="sennnd.png" alt="Submit" width="48" height="48">
+</form>
+  </div>
+  </body>
+</head>
+</html>

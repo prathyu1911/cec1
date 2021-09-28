@@ -69,6 +69,16 @@
   top: 100px;
   right: 2px;
 }
+.top3-right {
+  position: absolute;
+  top: 109px;
+  right: 160px;
+}
+.top4-right {
+  position: absolute;
+  top: 108px;
+  right: 320px;
+}
 .top2-right {
   position: absolute;
   top: 10px;
@@ -102,9 +112,9 @@
 }
 .button {
   border: none;
-  background-color:white;
+  background-color:lightgrey;
   color: black;
-  padding: 30px 42px;
+  /* padding: 30px 42px; */
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -154,12 +164,30 @@ function fees1(){
   document.getElementById("demo").innerHTML = "1,80,0000 INR";
 }
 </script>
-</body>
-</html>
+</div>
+<div class="top3-right">
+<button class= "button button1" onclick="fees2()">What is MGMT fees</button>
+<p id="demo1"></p>
+</div>
+<script>
+function fees2(){
+  document.getElementById("demo1").innerHTML = "2,50,0000 INR";
+}
+</script>
+</div>
+<div class="top4-right">
+<button class= "button button1" onclick="fees3()">What is BUS fees</button>
+<p id="demo2"></p>
+</div>
+<script>
+function fees3(){
+  document.getElementById("demo2").innerHTML = "50,0000 INR";
+}
+</script>
 </div>
    <div class="bottom-right">
  <form action="/action_page.php">
-  <label for="fname">First name:</label>
+  <label for="fname">Enter query:</label>
   <input type="text" id="fname" name="fname" size="170"><br><br>
   <input type="image" src="sennnd.png" alt="Submit" width="48" height="48">
 </form>
